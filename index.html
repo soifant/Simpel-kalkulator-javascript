@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simpel Kalkulator javascript</title>
+</head>
+
+<style type="text/css">
+body {
+padding:50% 0%;
+}
+#hasil{
+	border:1px solid #333;
+	border-radius:3px;
+	width:77%;
+	padding:20px 5px;
+	margin:5px;
+}
+
+#number{
+	font-size:20px;
+	padding:5px;
+	background:none;
+	border:none;
+	width:25px;
+}
+
+input{
+	padding:10px;
+	margin:0px;
+	width:30%;
+}
+.operasi{
+	padding:5px;
+	
+}
+
+.operasi button{
+	width:20%;
+	padding:10px;
+	font-size:20px;
+}
+h2{
+margin:0px;
+}
+</style>
+<body>
+<center>
+<div id="hasil">0</div>
+
+<input type="number" id="number1" onkeyup="Hitung()">
+<input type="button" id="number" value="?">
+<input type="number" id="number2" onkeyup="Hitung()">
+<br>
+<div class="operasi">
+<button onclick="Hitung('+')"><h2>+</h2></button>
+<button onclick="Hitung('-')"><h2>-</h2></button>
+<button onclick="Hitung('×')"><h2>×</h2></button>
+<button onclick="Hitung('÷')"><h2>÷</h2></button>
+</div>
+
+</center>
+</body>
+
+<script type="text/javascript">
+
+function Hitung(op){
+	
+	function Doc(x){
+		return document.getElementById(x);
+	}
+	
+	let num1 = Number(Doc('number1').value);
+	let num2 = Number(Doc('number2').value);
+	let er = Doc('number').value;
+	
+	
+	switch(op){
+		
+		case '+':
+		hasil = num1 + num2;
+		Doc('number').value = '+';
+		break;
+		
+		case '-':
+		hasil = num1 - num2;
+		Doc('number').value = '-';
+		break;
+		
+		case '×':
+		hasil = num1 * num2;
+		Doc('number').value = '×';
+		break;
+		
+		case '÷':
+		hasil = num1 / num2;
+		Doc('number').value = '÷';
+		break;
+		
+		default:
+		
+		switch(er){
+			case '+':
+			hasil = num1 + num2;
+			Doc('number').value = '+';
+			break;
+			
+			case '-':
+			hasil = num1 - num2;
+			Doc('number').value = '-';
+			break;
+			
+			case '×':
+			hasil = num1 * num2;
+			Doc('number').value = '×';
+			break;
+			
+			case '÷':
+			hasil = num1 / num2;
+			Doc('number').value = '÷';
+			break;
+			
+			default:
+			hasil = 'kesalahan';
+			break;
+		}
+		
+		break;
+	
+	}
+	
+	Doc('hasil').innerHTML = hasil;
+}
+
+</script>
+</html>
+</html>
